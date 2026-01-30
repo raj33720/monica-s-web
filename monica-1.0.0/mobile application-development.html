@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Mobile Application Development - Monica</title>
+    <link rel="stylesheet" href="css/vendor.css">
+    <link rel="stylesheet" href="css/styles.css">
+
+    <style>
+        /* Sidebar Navigation Styling */
+        
+        .service-nav {
+            position: sticky;
+            top: 120px;
+            border-left: 2px solid #e5e5e5;
+            padding-left: 2rem;
+        }
+        
+        .service-nav a {
+            display: block;
+            color: #888;
+            font-weight: 500;
+            margin-bottom: 1rem;
+            transition: all 0.3s;
+            font-size: 0.95rem;
+        }
+        
+        .service-nav a:hover,
+        .service-nav a.active {
+            color: var(--color-1);
+            /* Your theme orange */
+            transform: translateX(5px);
+        }
+        /* Timeline Visual Styling */
+        
+        .timeline-container {
+            display: flex;
+            justify-content: space-between;
+            margin: 3rem 0;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+        
+        .timeline-step {
+            flex: 1;
+            min-width: 140px;
+            background: linear-gradient(135deg, #1f2020, #2c3032);
+            padding: 1.5rem 1rem;
+            color: #fff;
+            position: relative;
+            text-align: center;
+            border-radius: 4px;
+        }
+        /* The arrow effect */
+        
+        .timeline-step:not(:last-child)::after {
+            content: "→";
+            position: absolute;
+            right: -15px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #ccc;
+            font-size: 1.2rem;
+            z-index: 1;
+        }
+        
+        .timeline-step.start {
+            background: var(--color-1);
+            /* Highlight first step */
+            font-weight: 700;
+        }
+        
+        .timeline-step h5 {
+            color: #fff;
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+        
+        .timeline-step p {
+            font-size: 1.5rem;
+            line-height: 1.4;
+            color: rgb(255 252 252 / 86%);
+            margin: 0;
+            text-align: center;
+        }
+        /* Deliverables List Styling */
+        
+        .deliverables-list {
+            list-style: none;
+            margin-left: 0;
+        }
+        
+        .deliverables-list>li {
+            margin-bottom: 2.5rem;
+        }
+        
+        .deliverables-list h4 {
+            font-size: 2rem;
+            font-weight: 600;
+            margin-bottom: 2rem;
+            color: #333;
+        }
+        
+        .sub-list {
+            list-style: none;
+            padding-left: 0;
+        }
+        
+        .sub-list li {
+            position: relative;
+            padding-left: 1.5rem;
+            margin-bottom: 0.5rem;
+            color: #555;
+            font-size: 1rem;
+        }
+        
+        .sub-list li::before {
+            content: "•";
+            color: var(--color-1);
+            font-weight: bold;
+            position: relative;
+            left: -5px;
+            font-size: 2.2rem;
+            line-height: 1;
+        }
+        /* --- JUSTIFY CONTENT ALIGNMENT --- */
+        /* Justify the main intro text */
+        
+        #intro p {
+            text-align: justify;
+            text-justify: inter-word;
+        }
+        /* Justify the description text under Timeline & Deliverables */
+        
+        #timeline>p,
+        #deliverables>p {
+            text-align: justify;
+            text-justify: inter-word;
+        }
+        /* Justify the list items in 'What We Deliver' */
+        
+        .sub-list li {
+            text-align: justify;
+            text-justify: inter-word;
+        }
+        /* Justify the FAQ answers */
+        
+        .accordion-content p {
+            text-align: justify;
+            text-justify: inter-word;
+        }
+        /* 1. Increase font size for Sidebar Navigation ("Overview intro") */
+        
+        .service-nav a {
+            font-size: 18px !important;
+            /* Adjust this number as needed */
+            line-height: 1.6;
+        }
+        /* 2. Increase font size for the "3 Assets" lists (The bullet points under 'What We Deliver') */
+        
+        .s-content ul li,
+        .s-content ol li,
+        .pagecontent li {
+            font-size: 16px !important;
+            /* Makes the small grey text larger */
+            color: #333;
+            /* Optional: Makes the text darker/clearer if it's too light */
+        }
+        /* 3. Increase font size for Frequently Asked Questions */
+        /* Note: I'm assuming the class name is '.faq' or similar based on standard naming */
+        
+        .faq,
+        .faq-item,
+        .accordion-body {
+            font-size: 18px !important;
+        }
+        /* Make the sidebar navigation follow on scroll */
+        
+        .service-nav {
+            position: -webkit-sticky;
+            /* For Safari browser support */
+            position: sticky;
+            top: 50px;
+            /* Keeps it 50px from the top of the browser window */
+            height: fit-content;
+            /* Ensures the container doesn't stretch unnecessarily */
+        }
+        /* 1. Style the 'Frequently Asked Questions' label */
+        
+        h6,
+        .faq-header {
+            font-size: 14px;
+            /* Keeps the label small/subtle */
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #888;
+            /* Light grey to keep it distinct from content */
+        }
+        /* 2. Increase the size of the actual Questions */
+        
+        .accordion-button,
+        .faq-question,
+        .card-header {
+            font-size: 20px !important;
+            /* Readable size (standard text size) */
+            font-weight: 500;
+            /* Semi-bold to make it pop without being huge */
+            line-height: 1.5;
+        }
+        /* 3. Increase the answer text (when opened) */
+        
+        .accordion-body,
+        .faq-answer {
+            font-size: 15px !important;
+            /* Slightly smaller than the question */
+            color: #555;
+        }
+        /* 1. Remove the heavy lines (borders) between FAQ items */
+        
+        .accordion-item,
+        .card,
+        .card-header {
+            border: none !important;
+            /* Removes the boxy border */
+            border-bottom: 1px solid #f0f0f0 !important;
+            /* Adds a very faint, professional separator instead */
+            background: transparent !important;
+            /* Removes any grey background colors */
+        }
+        /* 2. Fix text rendering to look natural (not AI-generated) */
+        
+        .accordion-button,
+        .faq-question {
+            hyphens: none !important;
+            /* Prevents words from breaking with dashes (e.g. "serv-ice") */
+            text-align: left !important;
+            /* Ensures words aren't stretched weirdly across the page */
+            word-spacing: normal !important;
+            /* Removes any extra gaps between words */
+            box-shadow: none !important;
+            /* Removes the glow/outline when you click */
+            padding-left: 0 !important;
+            /* Aligns text neatly to the left edge */
+        }
+        /* --- 1. Sidebar: Bigger Text & Sticky Scroll --- */
+        
+        .service-nav {
+            position: -webkit-sticky;
+            /* For Safari */
+            position: sticky;
+            top: 92px;
+            /* Stays 40px from the top when scrolling */
+            height: fit-content;
+            /* Prevents it from stretching weirdly */
+        }
+        
+        .service-nav a {
+            font-size: 18px !important;
+            /* Increases size (was likely ~14px) */
+            line-height: 2.2;
+            /* Adds more space between links */
+            display: block;
+            /* Ensures the whole area is clickable */
+            color: #666;
+            /* Soft grey (change if you want darker) */
+            text-decoration: none;
+            /* Removes underlines until hovered */
+        }
+        
+        .service-nav a.active,
+        .service-nav a:hover {
+            color: #000;
+            /* Darker color when active/hovered */
+            font-weight: 600;
+            /* Makes the active link pop */
+        }
+        /* --- 2. FAQ Section: Readable & Clean (No "Robot" look) --- */
+        /* Fixes the "dashes between words" and clean up borders */
+        
+        .accordion-item,
+        .faq-item {
+            border: none !important;
+            /* Removes heavy boxes */
+            border-bottom: 1px solid #e5e5e5 !important;
+            /* Adds a thin, modern divider */
+            background: transparent !important;
+        }
+        
+        .accordion-button,
+        .faq-question {
+            font-size: 17px !important;
+            /* Good readable size */
+            font-weight: 500;
+            /* Semi-bold for clarity */
+            padding: 20px 0 !important;
+            /* Adds breathing room top/bottom */
+            hyphens: none !important;
+            /* FORCE REMOVES dashes between words */
+            word-break: keep-all;
+            /* Keeps words whole */
+            box-shadow: none !important;
+            /* Removes blue glow on click */
+        }
+        
+        .accordion-body,
+        .faq-answer {
+            font-size: 16px !important;
+            /* Slightly smaller than question */
+            color: #444;
+            /* Dark grey for readability */
+            line-height: 1.6;
+            /* Easy to read paragraph spacing */
+            padding-bottom: 20px;
+        }
+        /* --- 3. Content Lists (The Bullet Points) --- */
+        
+        .s-content ul li,
+        .s-content ol li {
+            font-size: 17px !important;
+            /* Matches the FAQ readability */
+            margin-bottom: 10px;
+            /* Adds space between bullets */
+            line-height: 1.6;
+        }
+    </style>
+</head>
+
+<body id="top">
+
+    <header class="s-header">
+        <div class="row s-header__inner width-sixteen-col">
+            <div class="s-header__block">
+                <div class="s-header__logo">
+                    <a class="logo text-logo" href="index.html">Monica</a>
+                </div>
+                <a class="s-header__menu-toggle" href="#0"><span>Menu</span></a>
+            </div>
+            <nav class="s-header__nav">
+                <ul class="s-header__menu-links">
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="blog.html">Books</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+                <div class="s-header__contact">
+                    <button type="button" class="btn btn--primary s-header__contact-btn" id="openContactModal">
+                    Connect With Me!
+                </button>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <section class="s-content">
+
+        <section class="s-pageheader pageheader">
+            <div class="row">
+                <div class="column xl-12">
+                    <h1 class="page-title">
+                        <span class="page-title__small-type text-pretitle">Services</span> Mobile Application Development
+                    </h1>
+                </div>
+            </div>
+        </section>
+
+        <section class="s-pagecontent pagecontent">
+            <div class="row">
+
+                <div class="column xl-3 lg-12">
+                    <div class="service-nav">
+                        <a href="#intro" class="active">Overview</a>
+                        <a href="#timeline">Timeline</a>
+                        <a href="#deliverables">What We Deliver</a>
+                        <a href="contact.html" style="margin-top:2rem; text-decoration: underline;">Start a Project →</a>
+                    </div>
+                </div>
+
+                <div class="column xl-9 lg-12">
+
+                    <div id="intro" class="entry__text">
+                        <p class="lead">
+                            Reach your customers wherever they are. We design and develop high-performance mobile applications for iOS and Android that offer seamless user experiences and powerful functionality.
+                        </p>
+                        <p>
+                            Using modern cross-platform technologies like React Native and Flutter, we deliver native-like performance while reducing development time and maintenance costs.
+                        </p>
+                    </div>
+
+                    <hr class="u-fullwidth" style="margin: 3rem 0; opacity: 0.1;">
+
+                    <div id="timeline">
+                        <h3>Timeline</h3><br>
+                        <p>Our mobile lifecycle moves from design to app store submission seamlessly.</p>
+
+                        <p><strong>3-5 Months</strong></p>
+
+                        <div class="timeline-container">
+                            <div class="timeline-step start">
+                                <h5>Month 1</h5>
+                                <p>UX/UI & Prototype</p>
+                            </div>
+                            <div class="timeline-step">
+                                <h5>Month 2-3</h5>
+                                <p>Development</p>
+                            </div>
+                            <div class="timeline-step">
+                                <h5>Month 4</h5>
+                                <p>Testing & QA</p>
+                            </div>
+                            <div class="timeline-step">
+                                <h5>Month 5</h5>
+                                <p>App Store Launch</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <hr class="u-fullwidth" style="margin: 3rem 0; opacity: 0.1;">
+
+                    <div id="deliverables">
+                        <h3>What We Deliver</h3><br>
+                        <p>We deliver sleek, performant apps that are ready for the Apple App Store and Google Play Store.</p>
+                        <br>
+
+                        <ul class="deliverables-list">
+                            <li>
+                                <h4>1. Cross-Platform App</h4>
+                                <ul class="sub-list">
+                                    <li>Single codebase for iOS and Android</li>
+                                    <li>Native device feature access (Camera, GPS, Biometrics)</li>
+                                    <li>Offline mode capabilities</li>
+                                </ul>
+                            </li>
+
+                            <li>
+                                <h4>2. Backend & API</h4>
+                                <ul class="sub-list">
+                                    <li>Secure REST/GraphQL API development</li>
+                                    <li>Push notification server setup</li>
+                                    <li>Real-time data synchronization</li>
+                                </ul>
+                            </li>
+
+                            <li>
+                                <h4>3. App Store Deployment</h4>
+                                <ul class="sub-list">
+                                    <li>App Store (Apple) & Play Store (Google) submission</li>
+                                    <li>Compliance with store guidelines</li>
+                                    <li>Beta testing management (TestFlight)</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="row">
+                        <div class="column xl-12">
+                            <div class="faq-section">
+                                <div class="faq-header">
+                                    <h3>Frequently asked questions</h3>
+                                </div>
+                                <div class="accordion">
+                                    <div class="accordion-item">
+                                        <button class="accordion-toggle">
+                                            Native vs. Cross-Platform?
+                                            <span class="accordion-icon">+</span>
+                                        </button>
+                                        <div class="accordion-content">
+                                            <p>For 90% of business apps, Cross-Platform (React Native/Flutter) is better. It allows you to launch on both iPhone and Android simultaneously with one budget.</p>
+                                        </div>
+                                    </div>
+                                    <div class="accordion-item">
+                                        <button class="accordion-toggle">
+                                            Will you handle the App Store rejection?
+                                            <span class="accordion-icon">+</span>
+                                        </button>
+                                        <div class="accordion-content">
+                                            <p>Yes. We know the guidelines inside out. If a rejection occurs, we handle the necessary fixes and communication with Apple/Google until approved.</p>
+                                        </div>
+                                    </div>
+                                    <div class="accordion-item">
+                                        <button class="accordion-toggle">
+                                            How do you handle updates?
+                                            <span class="accordion-icon">+</span>
+                                        </button>
+                                        <div class="accordion-content">
+                                            <p>We offer maintenance packages to push updates. For critical bug fixes, we can often use Over-The-Air (OTA) updates to patch the app instantly without user action.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div style="margin-top: 1rem; text-align: center;">
+                                <a href="contact.html" class="btn btn--primary" style="min-width: 250px;">Book a Consultation</a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+    </section>
+
+    <div id="contactModal" class="contact-modal">
+        <div class="contact-modal__overlay"></div>
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+
+        <div class="contact-modal__box">
+            <button class="contact-modal__close" aria-label="Close">&times;</button>
+            <div class="contact-modal__content">
+                <div class="contact-modal__form">
+                    <h2>Contact us</h2>
+                    <form>
+                        <label>Name</label>
+                        <input type="text" placeholder="Your name">
+                        <label>Email</label>
+                        <input type="email" placeholder="Your email">
+                        <label>Message</label>
+                        <textarea rows="5" placeholder="Type your message..."></textarea>
+                        <button type="submit" class="btn btn--primary">Send Message</button>
+                    </form>
+                </div>
+                <div class="contact-modal__info">
+                    <div class="contact-modal__logo">
+                        <img src="images/logo.svg" alt="Logo">
+                    </div>
+                    <ul class="contact-modal__details">
+                        <li><span>📧</span> info@FuseGlobal.com</li>
+                        <li><span>📞</span> 415-869-8669</li>
+                        <li><span>📍</span> 264 Arlington Avenue</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const accordions = document.querySelectorAll(".accordion-toggle");
+            accordions.forEach(acc => {
+                acc.addEventListener("click", function() {
+                    this.classList.toggle("active");
+                    const icon = this.querySelector(".accordion-icon");
+                    if (icon) icon.textContent = this.classList.contains("active") ? "-" : "+";
+                    const panel = this.nextElementSibling;
+                    if (panel.style.maxHeight) {
+                        panel.style.maxHeight = null;
+                    } else {
+                        panel.style.maxHeight = panel.scrollHeight + "px";
+                    }
+                });
+            });
+        });
+    </script>
+    <script src="js/plugins.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/contact-modal.js"></script>
+
+</body>
+
+</html>
