@@ -5302,8 +5302,8 @@ p {
         border-radius: 10px;
     }
     .s-header__contact-btn {
-        padding: 0.6rem 1rem;
-        font-size: 0.85rem;
+        padding: 0rem 1rem;
+        font-size: 1.3rem;
     }
 }
 
@@ -7144,90 +7144,6 @@ body {
 
 
 /* ================================================== 
-   FINAL CONTACT MODAL MOBILE FIX 
-   (Paste this at the very bottom of styles.css)
-   ================================================== */
-
-@media screen and (max-width: 900px) {
-    /* 1. Disable Centering & Enable Page Scrolling */
-    /* This overrides the 'flex' centering so the modal can scroll normally */
-    .contact-modal.active {
-        display: block !important;
-        overflow-y: auto !important;
-        /* Allows scrolling the whole modal */
-        padding: 0 !important;
-    }
-    /* 2. Fix the Modal Box Sizing */
-    .contact-modal__box {
-        position: relative !important;
-        width: 100% !important;
-        /* Full width on mobile looks cleaner */
-        max-width: 100% !important;
-        height: auto !important;
-        /* Let it grow tall to fit content */
-        max-height: none !important;
-        /* Remove the limit that causes inner scrolling */
-        margin: 0 !important;
-        border-radius: 0 !important;
-        /* Optional: squares corners for full-screen feel */
-        overflow: visible !important;
-        /* No internal scrollbar */
-        transform: none !important;
-    }
-    /* 3. Stack Content Vertically */
-    .contact-modal__content {
-        display: flex !important;
-        flex-direction: column !important;
-        /* Form on top, Info on bottom */
-        height: auto !important;
-    }
-    /* 4. Adjust Form Padding */
-    .contact-modal__form {
-        padding: 30px 20px !important;
-        order: 1;
-        /* Ensures Form is first */
-    }
-    /* 5. Fix Info Section (Gold Background) */
-    .contact-modal__info {
-        padding: 40px 20px !important;
-        order: 2;
-        /* Ensures Info is second */
-        min-height: auto !important;
-        text-align: center !important;
-    }
-    /* 6. Resize Large Text for Mobile */
-    .contact-modal__info h3 {
-        font-size: 28px !important;
-        margin-bottom: 20px !important;
-    }
-    .contact-modal__info p {
-        justify-content: center !important;
-        font-size: 16px !important;
-    }
-    .contact-modal__details li {
-        justify-content: center !important;
-        font-size: 16px !important;
-    }
-    /* 7. Position Close Button */
-    .contact-modal__close {
-        position: absolute !important;
-        top: 15px !important;
-        right: 15px !important;
-        color: #333 !important;
-        /* Ensures visibility on white background */
-        z-index: 100 !important;
-        background: rgba(255, 255, 255, 0.8) !important;
-        /* Optional: adds background to make it easier to see */
-        border-radius: 50%;
-        width: 30px;
-        height: 30px;
-        line-height: 30px;
-        text-align: center;
-    }
-}
-
-
-/* ================================================== 
    FINAL CONTACT MODAL MOBILE FIX (Refined Design)
    ================================================== */
 
@@ -7294,11 +7210,13 @@ body {
         text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
         /* Makes text pop over image */
     }
-    .contact-modal__details li {
-        font-size: 16px !important;
-        margin: 0 !important;
-        justify-content: center !important;
-        text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+    @media screen and (max-width: 900px) {
+        .contact-modal__details li {
+            font-size: 18px !important;
+            margin: 0 !important;
+            justify-content: left;
+            text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+        }
     }
     /* 5. Close Button Visibility */
     .contact-modal__close {
