@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Web Design - Monica</title>
+    <title>Web Development - Monica</title>
     <link rel="stylesheet" href="css/vendor.css">
     <link rel="stylesheet" href="css/styles.css">
 
@@ -434,41 +434,41 @@
                 </div>
 
                 <div class="column xl-9 lg-12">
+                    div id="intro" class="entry__text">
+                    <p class="lead">
+                        We craft digital experiences that blend aesthetics with intuitive functionality—turning visitors into loyal customers through strategic design.
+                    </p>
+                    <p>
+                        Design is more than just how a website looks; it’s about how it works. Our design process focuses on user behavior, accessibility, and brand consistency to ensure your digital presence drives results.
+                    </p>
+                </div>
 
-                    <div id="intro" class="entry__text">
-                        <p class="lead">
-                            We craft digital experiences that blend aesthetics with intuitive functionality—turning visitors into loyal customers through strategic design.
-                        </p>
-                        <p>
-                            Design is more than just how a website looks; it’s about how it works. Our design process focuses on user behavior, accessibility, and brand consistency to ensure your digital presence drives results.
-                        </p>
-                    </div>
 
-                    <hr class="u-fullwidth" style="margin: 3rem 0; opacity: 0.1;">
 
-                    <div id="timeline">
-                        <h3>Timeline</h3><br>
-                        <p>Our design engagements are structured to allow for creative exploration while maintaining strict project deadlines.</p>
+                <hr class="u-fullwidth" style="margin: 3rem 0; opacity: 0.1;">
 
-                        <p><strong>3-6 Weeks</strong></p>
+                <div id="timeline">
+                    <h3>Timeline</h3><br>
+                    <p>Our design engagements are structured to allow for creative exploration while maintaining strict project deadlines.</p>
 
-                        <div class="timeline-container">
-                            <div class="timeline-step start">
-                                <h5>Week 1</h5>
-                                <p>Discovery & Moodboard</p>
-                            </div>
-                            <div class="timeline-step">
-                                <h5>Week 2-3</h5>
-                                <p>Wireframes & UX Flow</p>
-                            </div>
-                            <div class="timeline-step">
-                                <h5>Week 4-5</h5>
-                                <p>High-Fidelity UI Design</p>
-                            </div>
-                            <div class="timeline-step">
-                                <h5>Week 6</h5>
-                                <p>Handoff & Style Guide</p>
-                            </div>
+                    <p><strong>3-6 Weeks</strong></p>
+
+                    <div class="timeline-container">
+                        <div class="timeline-step start">
+                            <h5>Week 1</h5>
+                            <p>Discovery & Moodboard</p>
+                        </div>
+                        <div class="timeline-step">
+                            <h5>Week 2-3</h5>
+                            <p>Wireframes & UX Flow</p>
+                        </div>
+                        <div class="timeline-step">
+                            <h5>Week 4-5</h5>
+                            <p>High-Fidelity UI Design</p>
+                        </div>
+                        <div class="timeline-step">
+                            <h5>Week 6</h5>
+                            <p>Handoff & Style Guide</p>
                         </div>
                     </div>
 
@@ -508,8 +508,7 @@
                             </li>
                         </ul>
                     </div>
-
-                    <div class="row">
+                    <<div class="row">
                         <div class="column xl-12">
                             <div class="faq-section">
                                 <div class="faq-header">
@@ -558,9 +557,8 @@
                                 <a href="contact.html" class="btn btn--primary" style="min-width: 250px;">Book a Consultation</a>
                             </div>
                         </div>
-                    </div>
-
                 </div>
+            </div>
             </div>
         </section>
 
@@ -603,13 +601,11 @@
 
                     <ul class="contact-modal__details">
                         <li>
-                            <span>📧</span> info@FuseGlobal.com
+                            <span>📧</span> monica@mamotechnolabs.com
                         </li>
+
                         <li>
-                            <span>📞</span> 415-869-8669
-                        </li>
-                        <li>
-                            <span>📍</span> 264 Arlington Avenue
+                            <span>📍</span> MaMo TechnoLabs, Vadodara
                         </li>
                     </ul>
                 </div>
@@ -617,16 +613,16 @@
             </div>
         </div>
     </div>
-
     <script>
         document.addEventListener("DOMContentLoaded", function() {
             const accordions = document.querySelectorAll(".accordion-toggle");
+
             accordions.forEach(acc => {
                 acc.addEventListener("click", function() {
+                    // Toggle active class
                     this.classList.toggle("active");
-                    const icon = this.querySelector(".accordion-icon");
-                    if (icon) icon.textContent = this.classList.contains("active") ? "-" : "+"; // Changes + to -
 
+                    // Toggle panel visibility
                     const panel = this.nextElementSibling;
                     if (panel.style.maxHeight) {
                         panel.style.maxHeight = null;
@@ -640,7 +636,6 @@
     <script src="js/plugins.js"></script>
     <script src="js/main.js"></script>
     <script src="js/contact-modal.js"></script>
-
 </body>
 
 </html>
