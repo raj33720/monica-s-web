@@ -7095,3 +7095,49 @@ body {
         /* Remove default margins if any */
     }
 }
+
+.footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 40px;
+}
+
+
+/* LEFT SIDE (LinkedIn + copyright) */
+
+.footer-left {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    /* space between icon and text */
+}
+
+.footer-left .linkedin {
+    font-size: 22px;
+    color: #aaa;
+    transition: color 0.3s ease;
+}
+
+.footer-left .linkedin:hover {
+    color: #f59e0b;
+    /* same as your button color */
+}
+
+.footer-left .copyright {
+    font-size: 14px;
+    color: #999;
+}
+
+
+/* RIGHT SIDE (scroll button) */
+
+.footer-right .scroll-top {
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    border: 1px solid #aaa;
+    background: transparent;
+    color: #fff;
+    cursor: pointer;
+}
