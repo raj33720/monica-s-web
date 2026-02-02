@@ -7238,3 +7238,40 @@ body {
         box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     }
 }
+
+
+/* ================================================== 
+   MOBILE EXPERTISE GRID FIX 
+   (Stack items 1 after 2 vertically on phone)
+   ================================================== */
+
+@media screen and (max-width: 900px) {
+    /* 1. Force the Grid to be 1 Column */
+    .grid-list-items {
+        display: flex !important;
+        flex-direction: column !important;
+        /* Stacks them top to bottom */
+        grid-template-columns: 1fr !important;
+        /* Resets any grid columns */
+        gap: 0 !important;
+        /* Removes grid gap, we use margin instead */
+    }
+    /* 2. Make each Item Full Width */
+    .grid-list-items__item {
+        width: 100% !important;
+        margin-bottom: 40px !important;
+        /* Adds space between Topic 1 and Topic 2 */
+        padding-right: 0 !important;
+    }
+    /* 3. Ensure Text is Readable */
+    .list-items__item-text p {
+        max-width: 100% !important;
+        text-align: left !important;
+        /* Or justify, if you prefer */
+        padding-right: 10px;
+    }
+    /* Optional: Fix the Numbering position if needed */
+    .show-ctr .list-items__item-header::before {
+        margin-bottom: 10px;
+    }
+}

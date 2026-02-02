@@ -326,6 +326,60 @@
             /* Adds space between bullets */
             line-height: 1.6;
         }
+        /* =========================================
+           MOBILE LAYOUT FIX: Content First, Menu Last
+           ========================================= */
+        
+        @media screen and (max-width: 1000px) {
+            /* 1. Enable Flexbox Reordering */
+            .s-pagecontent .row {
+                display: flex;
+                flex-direction: column;
+            }
+            /* 2. Push the Sidebar (Overview, Timeline links) to the BOTTOM */
+            .s-pagecontent .column.xl-3 {
+                order: 2;
+                /* Moves it to position 2 */
+                margin-top: 60px;
+                /* Adds space above it */
+                margin-bottom: 40px;
+                border-top: 1px solid #e5e5e5;
+                /* Adds a separator line on top */
+                padding-top: 40px;
+            }
+            /* 3. Pull the Main Content to the TOP */
+            .s-pagecontent .column.xl-9 {
+                order: 1;
+                /* Moves it to position 1 */
+            }
+            /* 4. Reset Sidebar Styling for Bottom View */
+            .service-nav {
+                position: static;
+                /* Removes sticky behavior */
+                top: auto;
+                border-left: none;
+                /* Removes the left green line */
+                padding-left: 0;
+                display: flex;
+                flex-wrap: wrap;
+                gap: 15px;
+                /* Spacing between buttons */
+            }
+            /* 5. Make the links look like buttons/tags at the bottom */
+            .service-nav a {
+                font-size: 16px !important;
+                background: #f5f5f5;
+                padding: 10px 20px;
+                border-radius: 50px;
+                margin-bottom: 0;
+                color: #333;
+                font-weight: 600;
+            }
+            .service-nav a.active {
+                background: var(--color-1);
+                color: #fff;
+            }
+        }
     </style>
 </head>
 
