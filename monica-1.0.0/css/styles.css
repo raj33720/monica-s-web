@@ -1289,6 +1289,8 @@ h6,
     line-height: var(--vspace-0_75);
     text-transform: uppercase;
     letter-spacing: 0.25rem;
+    text-decoration: underline;
+    font-family: sans-serif;
 }
 
 
@@ -1298,7 +1300,7 @@ h6,
 
 p {
     line-height: 1.75;
-    letter-spacing: 0.01em;
+    letter-spacing: normal;
 }
 
 
@@ -1513,7 +1515,7 @@ hr.fancy::before {
     font-size: var(--text-md);
     line-height: 1.8;
     font-weight: 400;
-    text-align: justify;
+    text-align: left;
 }
 
 @media screen and (max-width: 800px) {
@@ -3462,7 +3464,7 @@ td:last-child {
         margin-top: var(--vspace-1_5);
     }
     .s-header__contact .btn {
-        width: 100%;
+        width: 33%;
         margin: 0;
     }
     .s-header__menu-toggle {
@@ -4917,7 +4919,7 @@ td:last-child {
    ================================================== */
 
 .blog-card__text p {
-    text-align: justify;
+    text-align: left;
     text-justify: inter-word;
     line-height: 1.75;
     letter-spacing: 0.01em;
@@ -4990,7 +4992,7 @@ td:last-child {
 .testimonial p,
 .review p,
 .column p {
-    text-align: justify;
+    text-align: left;
     text-justify: inter-word;
     line-height: 1.75;
 }
@@ -5047,7 +5049,7 @@ td:last-child {
 .s-testimonials .testimonial__text,
 .s-testimonials blockquote,
 .s-testimonials p {
-    text-align: justify;
+    text-align: left;
     line-height: 1.7;
     word-spacing: 0.05em;
     hyphens: auto;
@@ -5203,7 +5205,7 @@ td:last-child {
 .testimonials p,
 .s-content p,
 p {
-    text-align: justify;
+    text-align: left;
     /* Disable hyphenation */
     hyphens: none;
     -webkit-hyphens: none;
@@ -6391,13 +6393,6 @@ p {
 }
 
 .accordion-icon::before,
-.accordion-icon::after {
-    content: '';
-    position: absolute;
-    background-color: #333;
-    transition: transform 0.3s;
-}
-
 
 /* Horizontal line */
 
