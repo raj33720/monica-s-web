@@ -1,151 +1,185 @@
 ==================================================================================================
 
-DESCRIPTION:
-
-MONICA is a carefully crafted and modern HTML website template designed for freelancers, social 
-media managers, and marketing consultants who help businesses and companies improve their online 
-presence and establish long-lasting relationships with their communities. It is an excellent tool 
-for telling people about your skills and credentials, services, and other offerings, giving them 
-a better idea of who you are.
+MONICA – Personal Portfolio Website Template
 
 ==================================================================================================
 
+DESCRIPTION
+-----------
 
-LICENSE:
+MONICA is a modern, elegant, and fully responsive personal portfolio website template.
+It is designed for freelancers, social media managers, digital marketers, consultants,
+and creative professionals who want to showcase their skills, services, experience,
+and personal brand in a clean and professional way.
 
-This free resource is provided by styleshout.com and is free to use in 
-both personal and commercial projects.
+The template helps individuals present their online presence effectively and build
+trusting, long-lasting relationships with clients and communities.
 
+This project is customized and maintained for personal and educational use, with
+content and styling adapted as needed.
 
-Rights:
+==================================================================================================
+
+FEATURES
+--------
+- Modern and clean UI design
+- Fully responsive layout
+- Sections for About, Services, Portfolio, and Contact
+- Smooth scrolling and animations
+- Easy customization using HTML, CSS, and JavaScript
+- Mailchimp newsletter integration support
+
+==================================================================================================
+
+TECHNOLOGIES USED
+-----------------
+- HTML5
+- CSS3
+- JavaScript
+- Google Fonts
+- External JS libraries (Swiper, Prism, MoveTo)
+
+==================================================================================================
+
+LICENSE
 -------
 
-You are permitted to use this free resource in any number of personal and commercial projects for 
-yourself or a client. You may modify the resource according to your requirements and include them 
-in your projects under the following condition - you MUST give appropriate credit, provide an 
-attribution link to styleshout.com.
+This template is originally provided by StyleShout (https://www.styleshout.com)
+and is free to use for both personal and commercial projects under the following terms.
 
+==================================================================================================
 
-Prohibitions:
--------------
-
-You are not permitted to resell or redistribute(even for free) the resource "as is" without 
-prior consent. If you would like to republish or promote this resource on your site, please 
-link back to the appropriate resource page on styleshout.com where users can find the download 
-and not directly to the download zip file.
-
-
-Attribution: 
+USAGE RIGHTS
 ------------
 
-You must include a credit link to our website(https://www.styleshout.com) somewhere on your site. 
-We prefer the footer credit that comes with the template but you are still free to move it 
-somewhere else.
+You are permitted to:
+- Use this template in unlimited personal or commercial projects
+- Modify the template according to your project requirements
+- Use it for client projects
 
+Under the condition that:
+- Proper credit and attribution to StyleShout is provided
+- An attribution link to https://www.styleshout.com is included on the website
 
+==================================================================================================
 
-If you have any questions about the License, feel free to contact us.
+PROHIBITIONS
+------------
 
+You are NOT permitted to:
+- Resell or redistribute the template “as is”
+- Republish or promote the template without linking back to the original
+  StyleShout resource page
+- Directly link to the downloadable ZIP file
 
------------------------------------------------------------------------------------------------------
+==================================================================================================
 
+ATTRIBUTION
+-----------
 
-REMOVING THE ATTRIBUTION LINK:
+You must include a credit link to:
 
-We understand that there are situations where you want to use our templates without 
-the crediting obligation. If that's your case, you can always send us a 
-credit removal fee of 10 USD through Paypal. This will allow you to use a single 
-template attribution/credit link free on ONE DOMAIN name.
+https://www.styleshout.com
 
-You can send your payments through Paypal to this address: ealigam@gmail.com or
-visit our attribution removal page: https://www.styleshout.com/attribution-free/ 
-and click the pay button on the page.
+The preferred placement is in the website footer, but it may be moved elsewhere
+on the site if necessary.
 
-If possible, kindly send us the site's url where the template is being used. 
-Also, keep your Paypal receipt as proof of payment and your good to go.
+Example:
+"Template by StyleShout"
 
+==================================================================================================
 
------------------------------------------------------------------------------------------------------- 
+REMOVING ATTRIBUTION
+--------------------
 
+If you wish to remove the attribution link, StyleShout allows this by paying
+a one-time attribution removal fee of $10 USD per domain.
 
-SUPPORT:
-    
-Since MONICA is distributed for free, support is not offered. MONICA is coded according 
-to current web standards and we did our best to make the template easy to use and modify.
-If you have minimum web development experience, you can easily modify the template. 
-However, If you're still new to HTML and CSS, I suggest that you visit the 
-following tutorials:
+Payment options:
+- PayPal: ealigam@gmail.com
+- Attribution page: https://www.styleshout.com/attribution-free/
 
- - https://marksheet.io/
- - http://learn.shayhowe.com/html-css/
+Keep your PayPal receipt as proof of payment.
 
-These will teach you the essentials of HTML and CSS. In addition, if you want to include
-javascript in your skill-set, you can also check out these tutorials: 
+==================================================================================================
 
- - https://www.codecademy.com/learn/introduction-to-javascript
- - https://javascript.info/
+MAILCHIMP FORM SETUP
+-------------------
 
+To enable the Mailchimp subscription form:
 
+1. Log in to your Mailchimp account
+2. Navigate to Audience → Signup Forms
+3. Select "Embedded Forms" → "Unstyled"
+4. Copy the ACTION URL from the generated form
 
------------------------------------------------------------------------------------------------------- 
-
-
-USING THE MAILCHIMP FORM:
-
-To use the mailchimp form you need a mailchimp url. To get the mailchimp url, login to 
-your mailchimp account, click the Audience menu and select signup forms. Then choose 
-embedded forms and select unstyled form. In the generated form code get the value of 
-the form ACTION attribute and use it as your mailchimp url. Open the main.js file located
-in the template's "js" folder and look for this line of code: 
+Open the `main.js` file inside the `js` folder and update:
 
 const cfg = {
 
-    // MailChimp URL
-    mailChimpURL : 'https://facebook.us1.list-manage.com/subscribe/post?u=1abf75f6981256963a47d197a&amp;id=37c6d8f4d6' 
+    mailChimpURL: 'YOUR_MAILCHIMP_URL_HERE'
 
 };
 
+==================================================================================================
 
-Replace the value of mailChimpURL with your mailchimp url.
+SUPPORT
+-------
 
+This template is distributed for free; therefore, official support is not provided.
+However, the code follows modern web standards and is easy to modify for developers
+with basic HTML, CSS, and JavaScript knowledge.
 
+Helpful learning resources:
+- https://marksheet.io/
+- https://learn.shayhowe.com/html-css/
+- https://www.codecademy.com/learn/introduction-to-javascript
+- https://javascript.info/
 
--------------------------------------------------------------------------------------------------------
+==================================================================================================
 
-
-GET THE LATEST VERSION:
-
-We update our templates on a regular basis so to make sure that you have the latest version, 
-always download the template files directly on our website(https://www.styleshout.com/)
-
-
-
--------------------------------------------------------------------------------------------------------
-
-
-SOURCES AND CREDITS:
-
-I've used the following resources as listed.
+SOURCES AND CREDITS
+------------------
 
 Fonts:
- - DM Serif Display Font (https://fonts.google.com/specimen/DM+Serif+Display)
- - Roboto Flex Font (https://fonts.google.com/specimen/Roboto+Flex)
+- DM Serif Display – https://fonts.google.com/specimen/DM+Serif+Display
+- Roboto Flex – https://fonts.google.com/specimen/Roboto+Flex
 
 Icons:
- - Boxicons (https://boxicons.com/)
- - Atomicons (https://atomicons.com/)
+- Boxicons – https://boxicons.com/
+- Atomicons – https://atomicons.com/
 
-Stock Photos and Graphics:
- - Unsplash.com (https://unsplash.com/)
- 
-Javascript Files:
- - MoveTo.js (https://github.com/hsnaydd/moveTo)
- - Prism.js (https://prismjs.com/)
- - Swiper JS (https://swiperjs.com/)
+Images:
+- Unsplash – https://unsplash.com/
 
--------------------------------------------------------------------------------------------------------
+JavaScript Libraries:
+- MoveTo.js – https://github.com/hsnaydd/moveTo
+- Prism.js – https://prismjs.com/
+- Swiper JS – https://swiperjs.com/
 
+==================================================================================================
 
-Thanks for downloading from StyleShout :)
+AUTHOR
+------
 
+Customized and maintained by Monica  
+Personal Portfolio Website Project
 
+==================================================================================================
+
+GET THE LATEST VERSION
+---------------------
+
+To ensure you are using the latest official version of the template, always download
+the original files directly from:
+
+https://www.styleshout.com/
+
+==================================================================================================
+
+THANK YOU
+---------
+
+Thanks to StyleShout for providing high-quality free website templates.
+
+==================================================================================================

@@ -594,20 +594,21 @@
                 <div class="contact-modal__form">
                     <h2>Contact us</h2>
 
-                    <form>
+                    <form id="contactForm">
                         <label>Name</label>
-                        <input type="text" placeholder="Your name">
+                        <input type="text" name="name" placeholder="Your name" required>
 
                         <label>Email</label>
-                        <input type="email" placeholder="Your email">
+                        <input type="email" name="email" placeholder="Your email" required>
 
                         <label>Message</label>
-                        <textarea rows="5" placeholder="Type your message..."></textarea>
+                        <textarea name="message" rows="5" placeholder="Type your message..." required></textarea>
 
                         <button type="submit" class="btn btn--primary">
                         Send Message
-                    </button>
+                        </button>
                     </form>
+
                 </div>
 
                 <!-- RIGHT : INFO -->
@@ -632,6 +633,46 @@
     <script src="js/plugins.js"></script>
     <script src="js/main.js"></script>
     <script src="js/contact-modal.js"></script>
+    <!--<script>
+        // Select the form elements (Update IDs if yours are different)
+        const sendButton = document.querySelector('button'); // Or give your button an ID like #sendBtn
+        const nameInput = document.querySelector('input[placeholder="Your name"]');
+        const emailInput = document.querySelector('input[placeholder="Your email"]');
+        const messageInput = document.querySelector('textarea');
+
+        sendButton.addEventListener('click', async(e) => {
+            e.preventDefault(); // Stop the form from reloading the page
+
+            const formData = {
+                name: nameInput.value,
+                email: emailInput.value,
+                message: messageInput.value
+            };
+
+            try {
+                const response = await fetch('http://localhost:3000/send-email', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(formData)
+                });
+
+                if (response.ok) {
+                    alert('Message sent successfully!');
+                    // Optional: Clear the form
+                    nameInput.value = '';
+                    emailInput.value = '';
+                    messageInput.value = '';
+                } else {
+                    alert('Failed to send message.');
+                }
+            } catch (error) {
+                console.error('Error:', error);
+                alert('Error connecting to server.');
+            }
+        });
+    </script>-->
 
 </body>
 
