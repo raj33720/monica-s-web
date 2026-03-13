@@ -1289,7 +1289,7 @@ h6,
     line-height: var(--vspace-0_75);
     text-transform: uppercase;
     letter-spacing: 0.25rem;
-    text-decoration: underline;
+    text-decoration: none;
     font-family: sans-serif;
 }
 
@@ -3730,9 +3730,13 @@ td:last-child {
  * -------------------------------------------------------------------- */
 
 .s-intro__scroll-down {
-    z-index: 2;
-    grid-column: 1/10;
+    z-index: 4;
+    grid-column: 1/span 4;
     grid-row: 2;
+    align-self: end;
+    justify-self: start;
+    margin-top: var(--vspace-0_5);
+    position: relative;
 }
 
 .s-intro__scroll-down a {
@@ -5984,6 +5988,17 @@ p {
     margin-bottom: 35px;
 }
 
+.contact-modal__brand {
+    font-family: 'Cinzel', serif;
+    font-size: 2.8rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    line-height: 1;
+    text-transform: uppercase;
+    color: #f5efe4;
+    display: inline-block;
+}
+
 
 /* Big brand feel */
 
@@ -6004,6 +6019,11 @@ p {
 @media (max-width: 900px) {
     .contact-modal__content {
         grid-template-columns: 1fr;
+    }
+
+    .contact-modal__brand {
+        font-size: 2.2rem;
+        letter-spacing: 0.1em;
     }
     .contact-modal__info {
         text-align: center;
